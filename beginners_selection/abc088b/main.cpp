@@ -17,7 +17,7 @@ int main() {
   int alice  = 0;
   int bob    = 0;
   for (int i = 0; i < nturns; ++i) {
-    const auto j = i * nturns;
+    const auto j = i * 2;
     alice += a[j];
     bob += a[j + 1];
   }
