@@ -1,14 +1,10 @@
 #include <iostream>
 #include <string>
 
+bool is_even(int v) { return v % 2 == 0; }
+
 int main() {
   int a, b;
   std::cin >> a >> b;
-  const auto result = a * b;
-
-  if (result % 2 == 0) {
-    std::cout << "Even" << std::endl;
-  } else {
-    std::cout << "Odd" << std::endl;
-  }
+  std::cout << (is_even(a * b) ? "Even" : "Odd") << std::endl;
 }
