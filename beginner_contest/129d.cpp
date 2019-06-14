@@ -10,11 +10,10 @@ class Board {
   auto& operator()(int i, int j) noexcept { return s_[w_ * i + j]; }
   const auto& operator()(int i, int j) const noexcept { return s_[w_ * i + j]; }
 
-  auto begin() { return s_.begin(); }
-  auto end() { return s_.end(); }
-
-  auto begin() const { return s_.begin(); }
-  auto end() const { return s_.end(); }
+  auto max() const {
+    auto it = std::max_element(s_.begin(), s_.end());
+    return *it;
+  }
 
  private:
   int w_;
@@ -87,6 +86,5 @@ int main() {
       count(i, j) = l(i, j) + r(i, j) + u(i, j) + d(i, j) - 3;
   }
 
-  const auto it = std::max_element(count.begin(), count.end());
-  std::cout << *it << std::endl;
+  std::cout << count.max() << std::endl;
 }
