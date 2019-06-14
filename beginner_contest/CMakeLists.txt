@@ -33,3 +33,12 @@ target_link_libraries(bc127d PUBLIC common)
 
 add_executable(bc128b 128b.cpp)
 target_link_libraries(bc128b PUBLIC common)
+
+add_executable(bc129a 129a.cpp)
+target_link_libraries(bc129a PUBLIC common)
+add_executable(bc129b 129b.cpp)
+target_link_libraries(bc129b PUBLIC common)
+add_executable(bc129c 129c.cpp)
+target_link_libraries(bc129c PUBLIC common)
+add_executable(bc129d 129d.cpp)
+target_link_libraries(bc129d PUBLIC common)
