@@ -2,18 +2,18 @@
 #include <vector>
 
 int main() {
-  int N;
-  std::cin >> N;
+  int n;
+  std::cin >> n;
 
-  std::vector<int> Hs(N);
-  for (auto&& H : Hs) std::cin >> H;
+  std::vector<int> h(n);
+  for (auto&& hi : h) std::cin >> hi;
 
   int ans = 0;
-  int Hmax = Hs[0];
-  for (auto&& H : Hs) {
-    if (Hmax <= H) {
+  int hmax = h[0];
+  for (auto&& hi : h) {
+    if (hmax <= hi) {
       ++ans;
-      Hmax = H;
+      hmax = hi;
     }
   }
   std::cout << ans << std::endl;
