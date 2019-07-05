@@ -6,7 +6,7 @@ constexpr size_t DENOM = 1'000'000'007;
 
 // @brief Computes a binominal of (n, r)
 // @param n n of (n, r)
-// @param r r or (n, r)
+// @param r r of (n, r)
 // @return a list of binominal from (n, 1) to (n, r)
 std::vector<size_t> binominal(size_t n, size_t r) {
     std::vector<size_t> v(r + 1, 0);
