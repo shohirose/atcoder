@@ -24,7 +24,7 @@ std::vector<size_t> binominal(size_t n, size_t r) {
 }
 
 int main() {
-    // n: the number of balls (red + vlue).
+    // n: the number of balls (red + blue).
     // k: the number of blue balls.
     size_t n, k;
     std::cin >> n >> k;
