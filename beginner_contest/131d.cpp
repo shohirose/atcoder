@@ -17,17 +17,16 @@ int main() {
     std::sort(task.begin(), task.end(), [](const auto& ti, const auto& tj){
         return ti.b < tj.b;
     });
-
-    std::vector<size_t> cum(n + 1);
-    cum[0] = 0;
-    bool is_feasible = true;
-    for (size_t i = 1; i <= n; ++i) {
-        cum[i] = cum[i - 1] + task[i - 1].a;
-        if (cum[i] > task[i - 1].b) {
-            is_feasible = false;
-            break;
+    
+    const auto is_feasible = [&task]() {
+        auto cum = task[0].a;
+        if (cum > task[0].b) return false;
+        for (size_t i = 1; i < task.size(); ++i) {
+            cum += task[i].a;
+            if (cum > task[i].b) return false;
         }
-    }
+        return true;
+    }();
     
     std::cout << (is_feasible ? "Yes" : "No") << std::endl;
 }
