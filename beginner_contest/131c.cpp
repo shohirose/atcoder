@@ -17,8 +17,8 @@ size_t lcm(size_t m, size_t n) {
     return (m/gcd(m, n))*n;
 }
 
-// Number of dividable numbers less than or equal to n.
-size_t num_dividable(size_t n, size_t a, size_t b, size_t ab) {
+// Non-dividable numbers less than or equal to n.
+size_t num_non_dividable(size_t n, size_t a, size_t b, size_t ab) {
     return n - n/a - n/b + n/ab;
 }
 
@@ -27,7 +27,7 @@ int main() {
     std::cin >> A >> B >> C >> D;
 
     const auto CD = lcm(C, D);
-    const auto n1 = num_dividable(B, C, D, CD);
-    const auto n2 = num_dividable(A - 1, C, D, CD);
+    const auto n1 = num_non_dividable(B, C, D, CD);
+    const auto n2 = num_non_dividable(A - 1, C, D, CD);
     std::cout << n1 - n2 << std::endl;
 }
