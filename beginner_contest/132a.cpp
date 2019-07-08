@@ -1,18 +1,17 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
+
+bool has_two_chars(const std::string& s) {
+  return ((s[0] == s[1] && s[2] == s[3]) ||  //
+          (s[0] == s[3] && s[1] == s[2]) ||  //
+          (s[0] == s[2] && s[1] == s[3]))
+             ? true
+             : false;
+}
 
 int main() {
-    std::string s;
-    std::cin >> s;
+  std::string s;
+  std::cin >> s;
 
-    bool ok = true;
-    for (int i = 0; i < 4; ++i) {
-        const auto n = std::count(s.begin(), s.end(), s[i]);
-        if (n != 2) {
-            ok = false;
-            break;
-        }
-    }
-    std::cout << (ok ? "Yes" : "No") << std::endl;
+  std::cout << (has_two_chars(s) ? "Yes" : "No") << std::endl;
 }

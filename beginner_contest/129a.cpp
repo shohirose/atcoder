@@ -1,10 +1,22 @@
-#include <algorithm>
 #include <array>
 #include <iostream>
 
+int min_sum(int p, int q, int r) {
+  if (p < q) {
+    if (q < r)
+      return p + q;
+    else
+      return p + r;
+  } else {
+    if (p < r)
+      return p + q;
+    else
+      return q + r;
+  }
+}
+
 int main() {
-  std::array<int, 3> v;
-  std::cin >> v[0] >> v[1] >> v[2];
-  std::sort(v.begin(), v.end());
-  std::cout << v[0] + v[1] << std::endl;
+  int p, q, r;
+  std::cin >> p >> q >> r;
+  std::cout << min_sum(p, q, r) << std::endl;
 }

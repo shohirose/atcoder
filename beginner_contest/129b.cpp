@@ -1,13 +1,7 @@
 #include <iostream>
 #include <vector>
 
-int main() {
-  int n;
-  std::cin >> n;
-
-  std::vector<int> w(n);
-  for (auto&& wi : w) std::cin >> wi;
-
+int min_diff(int n, const std::vector<int>& w) {
   std::vector<int> cum(n);
   cum[0] = w[0];
   for (int i = 1; i < n; ++i) cum[i] = w[i] + cum[i - 1];
@@ -19,5 +13,15 @@ int main() {
     const auto diff = std::abs(s1 - s2);
     if (min > diff) min = diff;
   }
-  std::cout << min << std::endl;
+  return min;
+}
+
+int main() {
+  int n;
+  std::cin >> n;
+
+  std::vector<int> w(n);
+  for (auto&& wi : w) std::cin >> wi;
+
+  std::cout << min_diff(n, w) << std::endl;
 }
