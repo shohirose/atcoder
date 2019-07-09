@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8.2)
-project(adcoder_beginners_selection CXX)
+project(beginners_selection CXX)
 
 set(file_names 049c 081a 081b 083b 085b 086a 086c 087b 088b)
 
