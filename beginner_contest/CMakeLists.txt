@@ -3,7 +3,8 @@ project(begineer_contest CXX)
 
 set(file_names
     115a 115b 115c 115d
-    121c
+    121a 121b 121c
+    122a 122b 122c
     123a 123b 123c
     124a 124b 124c
     125a 125b 125c
@@ -14,7 +15,7 @@ set(file_names
     130a 130b 130c
     131a 131b 131c 131d
     132a 132b 132c 132d
-    133a 133b 133c 133d
+    133a 133b 133c 133d 133e
     )
 
 foreach(file_name IN LISTS file_names)
