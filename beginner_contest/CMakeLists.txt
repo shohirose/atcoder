@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.8.2)
 project(begineer_contest CXX)
 
 set(file_names
+    115a 115b 115c 115d
     121c
     123a 123b 123c
     124a 124b 124c
