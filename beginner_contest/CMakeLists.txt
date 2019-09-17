@@ -3,6 +3,7 @@ project(begineer_contest CXX)
 
 set(file_names
     115a 115b 115c 115d
+    119a 119b
     121a 121b 121c
     122a 122b 122c
     123a 123b 123c
