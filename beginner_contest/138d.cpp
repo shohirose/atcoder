@@ -2,15 +2,15 @@
 #include <queue>
 #include <vector>
 
-std::vector<std::vector<int>> make_graph(const int n) {
-  std::vector<std::vector<int>> tree(n);
+std::vector<std::vector<int>> make_adjacency_list(const int n) {
+  std::vector<std::vector<int>> adj(n);
   for (int i = 0; i < n - 1; ++i) {
     int a, b;
     std::cin >> a >> b;
-    tree[a - 1].push_back(b - 1);
-    tree[b - 1].push_back(a - 1);
+    adj[a - 1].push_back(b - 1);
+    adj[b - 1].push_back(a - 1);
   }
-  return tree;
+  return adj;
 }
 
 std::vector<int> make_counter(const int n, const int q) {
@@ -27,7 +27,7 @@ int main() {
   int n, q;
   std::cin >> n >> q;
 
-  const auto tree = make_graph(n);
+  const auto adj = make_adjacency_list(n);
   auto counter = make_counter(n, q);
 
   std::queue<int> roots;
@@ -42,7 +42,7 @@ int main() {
 
     is_searched[root] = true;
     const auto c = counter[root];
-    const auto& nodes = tree[root];
+    const auto& nodes = adj[root];
 
     for (auto&& node : nodes) {
       if (!is_searched[node]) {
