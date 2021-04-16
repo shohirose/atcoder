@@ -14,6 +14,10 @@ function(add_problem name)
       $<$<CXX_COMPILER_ID:Clang>:-Wall -Wextra -Wpedantic>
       $<$<CXX_COMPILER_ID:Intel>:$<IF:$<PLATFORM_ID:Windows>,/W3,-w3>>
     )
+  target_compile_definitions(${name}
+    PRIVATE
+      $<$<CXX_COMPILER_ID:MSVC>:NOMINMAX>
+    )
 endfunction()
 
 add_problem(a)
