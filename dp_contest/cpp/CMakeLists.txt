@@ -1,10 +1,22 @@
 cmake_minimum_required(VERSION 3.8.2)
 project(dp_contest CXX)
 
-set(file_names a b c d)
+function(add_problem name)
+  add_executable(${name} ${name}.cpp)
+  target_compile_features(${name}
+    PRIVATE
+      cxx_std_14
+    )
+  target_compile_options(${name}
+    PRIVATE
+      $<$<CXX_COMPILER_ID:MSVC>:/W3>
+      $<$<CXX_COMPILER_ID:GNU>:-Wall -Wextra -Wpedantic>
+      $<$<CXX_COMPILER_ID:Clang>:-Wall -Wextra -Wpedantic>
+      $<$<CXX_COMPILER_ID:Intel>:$<IF:$<PLATFORM_ID:Windows>,/W3,-w3>>
+    )
+endfunction()
 
-foreach(file_name IN LISTS file_names)
-    add_executable(${file_name} ${file_name}.cpp)
-    target_compile_features(${file_name} PUBLIC cxx_std_14)
-    target_compile_options(${file_name} PUBLIC -Wall -Wextra -Wpedantic)
-endforeach()
+add_problem(a)
+add_problem(b)
+add_problem(c)
+add_problem(d)
