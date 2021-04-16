@@ -17,7 +17,7 @@ size_t greatestCommonDivisor(size_t a, size_t b) {
 
 size_t countPrimeFactors(size_t n) {
   size_t count = 0;
-  const size_t max = std::sqrt(n);
+  const auto max = static_cast<size_t>(std::sqrt(n));
   for (size_t pi = 2; pi <= max; ++pi) {
     if (n % pi == 0) {
       ++count;

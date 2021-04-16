@@ -34,7 +34,7 @@ int main() {
     std::cin >> pts[i];
   }
 
-  for (int i = 0; i < pts.size() - 1; ++i) {
+  for (size_t i = 0; i < pts.size() - 1; ++i) {
     if (!is_movable(pts[i], pts[i + 1])) {
       std::cout << "No" << std::endl;
       return EXIT_SUCCESS;

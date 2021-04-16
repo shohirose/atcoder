@@ -7,7 +7,7 @@ int main() {
   size_t n;
   std::cin >> n;
 
-  const size_t maxJ = std::sqrt(n);
+  const auto maxJ = static_cast<size_t>(std::sqrt(n));
 
   size_t minMove = n - 1;
   for (size_t j = 2; j <= maxJ; ++j) {
