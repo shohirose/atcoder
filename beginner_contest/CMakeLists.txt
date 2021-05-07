@@ -5,7 +5,7 @@ function(add_problem name)
   add_executable(${name} ${name}.cpp)
   target_compile_features(${name}
     PRIVATE
-      cxx_std_14
+      cxx_std_17
     )
   target_compile_options(${name}
     PRIVATE
@@ -117,3 +117,7 @@ add_problem(144c)
 add_problem(144d)
 
 add_problem(158d)
+
+add_problem(199a)
+add_problem(199b)
+add_problem(199c)
