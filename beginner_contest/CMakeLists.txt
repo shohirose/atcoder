@@ -121,3 +121,7 @@ add_problem(158d)
 add_problem(199a)
 add_problem(199b)
 add_problem(199c)
+
+add_problem(200a)
+add_problem(200b)
+add_problem(200c)
